@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 		navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
 		splitViewController.delegate = self
 
+		let myStep = ORKInstructionStep(identifier: "intro")
+		myStep.title = "Welcome to ResearchKit"
+
 		let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
 		let controller = masterNavigationController.topViewController as! MasterViewController
 		controller.managedObjectContext = self.managedObjectContext
